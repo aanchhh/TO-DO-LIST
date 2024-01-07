@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ToDo List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital@1&display=swap" rel="stylesheet">
+<style>
+    body {
+        /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    margin: 0; /* Remove default margin */
+    transition: background-color 0.5s ease;
+    }
+    .container {
+    text-align: center; /* Center text within container */
+
+ }
+
+ .customizer {
+    margin-top: 2px;
+    top:3%;
+    left: 80%;
+    position: fixed;
+ }
+
+ .customizer input[type="color"] {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+ }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>TO-DO LIST</h2>
+        <button onclick="openFileInput()">Choose File</button>
+        <div class="container nav" id="container">
+            <div class="customizer">
+               <label for="bgcolor">Change Background Color:</label>
+               <input type="color" id="bgcolor" name="bgcolor">
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+        <h1>Your tasks</h1>
+        <div id="app">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+        <input type="file" class="idk" id="image-input" accept=".jpg, .jpeg" style="display: none;" onchange="setBackgroundImage(event)">
+        <div  id="image-container">
+            <!-- Content goes here -->
+        </div>
+        <script src="script.js"></script>
+    <script src="app.js"></script>      
+       <script>
+        const bgcolor = document.getElementById('bgcolor');
+        const body = document.body;
+       
+        bgcolor.addEventListener('input', function() {
+           body.style.backgroundColor = this.value;
+        });
+       </script>
+    
+    
+
+   
+
+</body>
+</html>
